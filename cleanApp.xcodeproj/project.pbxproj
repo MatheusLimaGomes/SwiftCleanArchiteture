@@ -6,18 +6,13 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		948219D4246D86660002226E /* cleanApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 948219D2246D86660002226E /* cleanApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		948219CF246D86660002226E /* cleanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = cleanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		948219D2246D86660002226E /* cleanApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cleanApp.h; sourceTree = "<group>"; };
-		948219D3246D86660002226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		948219DF246D87190002226E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		948219E2246D87190002226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		948219CC246D86660002226E /* Frameworks */ = {
+		948219DC246D87190002226E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -30,7 +25,7 @@
 		948219C5246D86660002226E = {
 			isa = PBXGroup;
 			children = (
-				948219D1246D86660002226E /* cleanApp */,
+				948219E0246D87190002226E /* Domain */,
 				948219D0246D86660002226E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,50 +33,48 @@
 		948219D0246D86660002226E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				948219CF246D86660002226E /* cleanApp.framework */,
+				948219DF246D87190002226E /* Domain.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		948219D1246D86660002226E /* cleanApp */ = {
+		948219E0246D87190002226E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				948219D2246D86660002226E /* cleanApp.h */,
-				948219D3246D86660002226E /* Info.plist */,
+				948219E2246D87190002226E /* Info.plist */,
 			);
-			path = cleanApp;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		948219CA246D86660002226E /* Headers */ = {
+		948219DA246D87190002226E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948219D4246D86660002226E /* cleanApp.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		948219CE246D86660002226E /* cleanApp */ = {
+		948219DE246D87190002226E /* Domain */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 948219D7246D86660002226E /* Build configuration list for PBXNativeTarget "cleanApp" */;
+			buildConfigurationList = 948219E4246D87190002226E /* Build configuration list for PBXNativeTarget "Domain" */;
 			buildPhases = (
-				948219CA246D86660002226E /* Headers */,
-				948219CB246D86660002226E /* Sources */,
-				948219CC246D86660002226E /* Frameworks */,
-				948219CD246D86660002226E /* Resources */,
+				948219DA246D87190002226E /* Headers */,
+				948219DB246D87190002226E /* Sources */,
+				948219DC246D87190002226E /* Frameworks */,
+				948219DD246D87190002226E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = cleanApp;
-			productName = cleanApp;
-			productReference = 948219CF246D86660002226E /* cleanApp.framework */;
+			name = Domain;
+			productName = Domain;
+			productReference = 948219DF246D87190002226E /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -93,7 +86,7 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Matheus Lima Gomes";
 				TargetAttributes = {
-					948219CE246D86660002226E = {
+					948219DE246D87190002226E = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -111,13 +104,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				948219CE246D86660002226E /* cleanApp */,
+				948219DE246D87190002226E /* Domain */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		948219CD246D86660002226E /* Resources */ = {
+		948219DD246D87190002226E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,7 +120,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		948219CB246D86660002226E /* Sources */ = {
+		948219DB246D87190002226E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,51 +250,55 @@
 			};
 			name = Release;
 		};
-		948219D8246D86660002226E /* Debug */ = {
+		948219E5246D87190002226E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U2RRJBJ9M2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = cleanApp/Info.plist;
+				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "matheus-lima-gomes.cleanApp";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "matheus-lima-gomes.Domain";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		948219D9246D86660002226E /* Release */ = {
+		948219E6246D87190002226E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U2RRJBJ9M2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = cleanApp/Info.plist;
+				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "matheus-lima-gomes.cleanApp";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "matheus-lima-gomes.Domain";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -317,11 +314,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		948219D7246D86660002226E /* Build configuration list for PBXNativeTarget "cleanApp" */ = {
+		948219E4246D87190002226E /* Build configuration list for PBXNativeTarget "Domain" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				948219D8246D86660002226E /* Debug */,
-				948219D9246D86660002226E /* Release */,
+				948219E5246D87190002226E /* Debug */,
+				948219E6246D87190002226E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
