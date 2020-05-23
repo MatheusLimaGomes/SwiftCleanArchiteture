@@ -30,7 +30,7 @@ class HTTTPClientSpy: HttpPostClient {
     }
 }
 class RemoteAddAccountTest: XCTestCase {
-    func test_ () throws {
+    func test_add_should_call_httpClient_with_correct_url () throws {
         let url =  URL(string: "http://teste.dominio.com.br")!
         let httpClientSpy = HTTTPClientSpy()
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
