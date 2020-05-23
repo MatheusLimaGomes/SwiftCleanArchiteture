@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942F42BB2476105F003FD0B1 /* RemoteAddAccountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */; };
 		948219E8246D87B90002226E /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E7246D87B90002226E /* AddAccount.swift */; };
 		948219EA246D89450002226E /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E9246D89450002226E /* AccountModel.swift */; };
 		94821A3E246D8AD80002226E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94821A35246D8AD80002226E /* Data.framework */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTest.swift; sourceTree = "<group>"; };
 		948219DF246D87190002226E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948219E2246D87190002226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		948219E7246D87B90002226E /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				94821A44246D8AD80002226E /* Info.plist */,
+				942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 					};
 					94821A3C246D8AD80002226E = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -300,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				942F42BB2476105F003FD0B1 /* RemoteAddAccountTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +554,7 @@
 		94821A48246D8AD80002226E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U2RRJBJ9M2;
@@ -562,6 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "matheus-lima-gomes.DataTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -569,6 +576,7 @@
 		94821A49246D8AD80002226E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U2RRJBJ9M2;
