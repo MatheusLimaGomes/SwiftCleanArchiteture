@@ -23,12 +23,6 @@ class RemoteAddAccount {
 protocol HttpPostClient {
     func post(url: URL)
 }
-class HTTTPClientSpy: HttpPostClient {
-    var url: URL?
-    func post(url: URL) {
-        self.url = url
-    }
-}
 class RemoteAddAccountTest: XCTestCase {
     func test_add_should_call_httpClient_with_correct_url () throws {
         let url =  URL(string: "http://teste.dominio.com.br")!
@@ -36,5 +30,14 @@ class RemoteAddAccountTest: XCTestCase {
         let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
         sut.add()
         XCTAssertEqual(httpClientSpy.url, url)
+    }
+}
+
+extension RemoteAddAccountTest {
+    class HTTTPClientSpy: HttpPostClient {
+        var url: URL?
+        func post(url: URL) {
+            self.url = url
+        }
     }
 }
