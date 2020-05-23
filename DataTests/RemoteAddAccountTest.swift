@@ -17,9 +17,8 @@ class RemoteAddAccount {
         self.url =  url
         self.httpClient = httpClient
     }
-    func add(addAccountModel: AddAccountModel)  {
-        let data = try? JSONEncoder().encode(addAccountModel)
-        httpClient.post(to: url, with: data )
+    func add(addAccountModel: AddAccountModel)  { 
+        httpClient.post(to: url, with: addAccountModel.toData() )
     }
 }
 protocol HttpPostClient {
@@ -38,8 +37,7 @@ class RemoteAddAccountTest: XCTestCase {
         let (sut, httpClientSpy) = makeSut()
         let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
-        let data = try? JSONEncoder().encode(addAccountModel)
-        XCTAssertEqual(httpClientSpy.data, data)
+        XCTAssertEqual(httpClientSpy.data, addAccountModel.toData())
     }
 }
 

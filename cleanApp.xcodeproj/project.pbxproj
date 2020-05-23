@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		942F42BB2476105F003FD0B1 /* RemoteAddAccountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */; };
+		946048832479C1AA0075EFE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048822479C1AA0075EFE3 /* Model.swift */; };
 		948219E8246D87B90002226E /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E7246D87B90002226E /* AddAccount.swift */; };
 		948219EA246D89450002226E /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E9246D89450002226E /* AccountModel.swift */; };
 		94821A3E246D8AD80002226E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94821A35246D8AD80002226E /* Data.framework */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTest.swift; sourceTree = "<group>"; };
+		946048822479C1AA0075EFE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		948219DF246D87190002226E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948219E2246D87190002226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		948219E7246D87B90002226E /* AddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccount.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				948219E2246D87190002226E /* Info.plist */,
 				948219E7246D87B90002226E /* AddAccount.swift */,
 				948219E9246D89450002226E /* AccountModel.swift */,
+				946048822479C1AA0075EFE3 /* Model.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				946048832479C1AA0075EFE3 /* Model.swift in Sources */,
 				948219E8246D87B90002226E /* AddAccount.swift in Sources */,
 				948219EA246D89450002226E /* AccountModel.swift in Sources */,
 			);
