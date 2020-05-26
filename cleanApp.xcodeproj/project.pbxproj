@@ -114,13 +114,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9460488C2479C4EF0075EFE3 /* HttpProtocols */ = {
+		9460488C2479C4EF0075EFE3 /* Http */ = {
 			isa = PBXGroup;
 			children = (
 				946048972479CFBC0075EFE3 /* HttpErros */,
 				946048882479C4040075EFE3 /* HttpPostClient.swift */,
 			);
-			path = HttpProtocols;
+			path = Http;
 			sourceTree = "<group>";
 		};
 		9460488D2479C50D0075EFE3 /* UseCases */ = {
@@ -193,7 +193,7 @@
 				94E8B4EB247C3A7600586FA6 /* Helpers */,
 				94821A38246D8AD80002226E /* Info.plist */,
 				9460488D2479C50D0075EFE3 /* UseCases */,
-				9460488C2479C4EF0075EFE3 /* HttpProtocols */,
+				9460488C2479C4EF0075EFE3 /* Http */,
 			);
 			path = Data;
 			sourceTree = "<group>";
