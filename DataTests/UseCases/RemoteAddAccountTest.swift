@@ -28,42 +28,48 @@ class RemoteAddAccountTest: XCTestCase {
     
     func test_add_should_complete_with_error_if_client_complete_with_error () throws {
         let (sut, httpClientSpy) = makeSut()
-        expect(sut, completesWith: .failure(.unexpected)) {
+        expect(sut, completesWith: .failure(.unexpected), when: {
             httpClientSpy.completeWithError(.noConnectivityError)
-        }
+        })
     }
     
     func test_add_should_complete_with_data_if_client_complete_with_valid_data () throws {
       let (sut, httpClientSpy) = makeSut()
         let expectedAccount = makeAccountModel()
-        expect(sut, completesWith: .success(expectedAccount)) {
+        expect(sut, completesWith: .success(expectedAccount), when: {
             httpClientSpy.completeWithData(expectedAccount.toData()!)
-        }
+        })
     }
-    
     
     func test_add_should_complete_with_error_if_client_complete_with_invalid_data () throws {
       let (sut, httpClientSpy) = makeSut()
-      expect(sut, completesWith: .failure(.unexpected)) {
+      expect(sut, completesWith: .failure(.unexpected), when: {
              httpClientSpy.completeWithData(makeInvalidData())
-        }
+        })
     }
 }
 
 extension RemoteAddAccountTest {
     
-    func makeSut(url: URL = URL(string: "http://teste.dominio.com.br")!) -> (sut: RemoteAddAccount, httpClient: HTTTPClientSpy ) {
+    func makeSut(url: URL = URL(string: "http://teste.dominio.com.br")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteAddAccount, httpClient: HTTTPClientSpy) {
         let httpClientSpy = HTTTPClientSpy()
          let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
+        checkMemoryLeak(for: sut, file: file, line: line)
         return (sut, httpClientSpy)
     }
-    func expect(_ sut: RemoteAddAccount, completesWith expectedResult: (Result<AccountModel, DomainError>), when action: () -> Void) {
+    func checkMemoryLeak(for instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [ weak instance ] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
+    }
+    
+    func expect(_ sut: RemoteAddAccount, completesWith expectedResult: (Result<AccountModel, DomainError>), when action: () -> Void,  file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "wating")
         sut.add(addAccountModel: makeAddAccountModel()) { receivedResult in
             switch (expectedResult, receivedResult) {
-            case (.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError)
-            case (.success(let expectedAccount), .success(let receivedAccount)): XCTAssertEqual(expectedAccount, receivedAccount)
-            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead")
+            case (.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+            case (.success(let expectedAccount), .success(let receivedAccount)): XCTAssertEqual(expectedAccount, receivedAccount, file: file, line: line)
+            default: XCTFail("Expected \(expectedResult) received \(receivedResult) instead", file: file, line: line)
             }
             
             exp.fulfill()
