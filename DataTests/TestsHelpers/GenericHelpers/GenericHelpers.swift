@@ -18,5 +18,5 @@ func makeInvalidData() -> Data {
     return Data("invalid_data".utf8)
 }
 func makeValidData() -> Data {
-    return Data("{\"name\": \"Matheus\"}".utf8)
+    return Data("{\"name\": \"any_name\"}".utf8)
 }
