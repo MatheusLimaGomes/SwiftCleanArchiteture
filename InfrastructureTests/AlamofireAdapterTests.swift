@@ -23,29 +23,18 @@ class AlamofireAdapter {
 class AlamofireAdapterTests: XCTestCase {
     func test_post_should_make_request_with_valid_url_and_method() throws {
         let url = makeURL()
-        let sut = makeSut()
-        sut.post(to: url, with: makeValidData())
-        let exp = expectation(description: "wating")
-        URLProtocolStub.observeRequest { request in
-            XCTAssertEqual(url, request.url)
-            XCTAssertEqual("POST", request.httpMethod)
-            XCTAssertNotNil(request.httpBodyStream)
-            exp.fulfill()
+        
+        makeRequestFor(to: url, with: makeValidData()) {
+            XCTAssertEqual(url, $0.url)
+            XCTAssertEqual("POST", $0.httpMethod)
+            XCTAssertNotNil($0.httpBodyStream)
+            
         }
-        wait(for: [exp], timeout: 1)
     }
     func test_post_should_make_request_with_no_data() throws {
-        let url = makeURL()
-        let sut = makeSut()
-        sut.post(to: url, with: nil)
-        let exp = expectation(description: "wating")
-        URLProtocolStub.observeRequest { request in
-            XCTAssertEqual(url, request.url)
-            XCTAssertEqual("POST", request.httpMethod)
-            XCTAssertNil(request.httpBodyStream)
-            exp.fulfill()
+        makeRequestFor(with: makeInvalidData()) {
+            XCTAssertNil($0.httpBodyStream)
         }
-        wait(for: [exp], timeout: 1)
     }
 }
 extension AlamofireAdapterTests {
@@ -54,6 +43,19 @@ extension AlamofireAdapterTests {
         config.protocolClasses = [URLProtocolStub.self]
         let session = Session(configuration: config)
         return AlamofireAdapter(session: session)
+    }
+    
+    func makeRequestFor(to url: URL = makeURL(),
+                        with data: Data?,
+                        action: @escaping (URLRequest) -> Void) {
+        let sut = makeSut()
+        sut.post(to: url, with: data)
+        let exp = expectation(description: "wating")
+        URLProtocolStub.observeRequest { request in
+            action(request)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
     }
 }
 class URLProtocolStub: URLProtocol {
@@ -71,5 +73,4 @@ class URLProtocolStub: URLProtocol {
         URLProtocolStub.emit?(request)
     }
     override open func stopLoading() {}
-
 }
