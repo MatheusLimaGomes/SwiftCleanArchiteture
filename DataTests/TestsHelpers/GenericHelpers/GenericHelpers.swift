@@ -23,3 +23,7 @@ func makeValidData() -> Data {
 func makeError() -> Error {
     return NSError(domain: "any_domain", code:  0 )
 }
+
+func makeHTTPURLesponse(statusCode: Int = 200) -> HTTPURLResponse {
+    return HTTPURLResponse(url: makeURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+}
