@@ -181,7 +181,7 @@
 		9460488C2479C4EF0075EFE3 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				946048972479CFBC0075EFE3 /* HttpErros */,
+				946048972479CFBC0075EFE3 /* HttpErrors */,
 				946048882479C4040075EFE3 /* HttpPostClient.swift */,
 			);
 			path = Http;
@@ -211,12 +211,12 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		946048972479CFBC0075EFE3 /* HttpErros */ = {
+		946048972479CFBC0075EFE3 /* HttpErrors */ = {
 			isa = PBXGroup;
 			children = (
 				946048982479CFD20075EFE3 /* HttpErrors.swift */,
 			);
-			path = HttpErros;
+			path = HttpErrors;
 			sourceTree = "<group>";
 		};
 		948219C5246D86660002226E = {

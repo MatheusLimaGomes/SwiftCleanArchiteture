@@ -19,6 +19,9 @@ func makeInvalidData() -> Data {
 func makeValidData() -> Data {
     return Data("{\"name\": \"any_name\"}".utf8)
 }
+func makeEmptyData() -> Data {
+    return Data()
+}
 
 func makeError() -> Error {
     return NSError(domain: "any_domain", code:  0 )
