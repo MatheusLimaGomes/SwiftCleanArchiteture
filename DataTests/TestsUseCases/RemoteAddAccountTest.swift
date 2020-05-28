@@ -29,7 +29,7 @@ class RemoteAddAccountTest: XCTestCase {
     func test_add_should_complete_with_error_if_client_complete_with_error () throws {
         let (sut, httpClientSpy) = makeSut()
         expect(sut, completesWith: .failure(.unexpected), when: {
-            httpClientSpy.completeWithError(.noConnectivityError)
+            httpClientSpy.completeWithError(.noConnectivity)
         })
     }
     
@@ -53,7 +53,7 @@ class RemoteAddAccountTest: XCTestCase {
         var result: Result<AccountModel, DomainError>?
         sut?.add(addAccountModel: makeAddAccountModel ()) { result = $0 }
         sut = nil
-        httpClient.completeWithError(.noConnectivityError)
+        httpClient.completeWithError(.noConnectivity)
         XCTAssertNil(result)
     }
 }

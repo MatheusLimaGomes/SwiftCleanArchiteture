@@ -10,5 +10,5 @@ import Foundation
 
 
 public enum HttpClientError: Error {
-    case noConnectivityError
+    case noConnectivity
 }

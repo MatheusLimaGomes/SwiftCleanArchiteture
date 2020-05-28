@@ -11,7 +11,6 @@ import Foundation
 
 func makeURL() -> URL {
     return URL(string: "http://teste.dominio.com.br")!
-
 }
 
 func makeInvalidData() -> Data {
@@ -19,4 +18,8 @@ func makeInvalidData() -> Data {
 }
 func makeValidData() -> Data {
     return Data("{\"name\": \"any_name\"}".utf8)
+}
+
+func makeError() -> Error {
+    return NSError(domain: "any_domain", code:  0 )
 }

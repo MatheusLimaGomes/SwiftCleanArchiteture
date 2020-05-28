@@ -8,6 +8,7 @@
 
 import XCTest
 import Alamofire
+import Data
 
 class AlamofireAdapter {
     private let session: Session
@@ -15,9 +16,14 @@ class AlamofireAdapter {
     init(session: Session = .default) {
         self.session = session
     }
-    func post(to url: URL, with data: Data?) {
+    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpClientError>)  ->  Void) {
         session.request(url, method: .post, parameters: data?
-            .toJson(), encoding: JSONEncoding.default).resume()
+            .toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
+                switch dataResponse.result {
+                case .failure: completion(.failure(.noConnectivity))
+                case .success: break
+                }
+        }
     }
 }
 class AlamofireAdapterTests: XCTestCase {
@@ -36,6 +42,21 @@ class AlamofireAdapterTests: XCTestCase {
             XCTAssertNil($0.httpBodyStream)
         }
     }
+    
+    func test_post_should_complete_with_error_when_requestcompletes_with_error() {
+        let sut = makeSut()
+        URLProtocolStub.setup(data: nil, response: nil, error: makeError())
+        let exp = expectation(description: "wating")
+        sut.post(to: makeURL(), with: makeValidData()) { result in
+            switch  result  {
+            case   .failure(let error):
+                XCTAssertEqual(error, .noConnectivity)
+            case .success(_): XCTFail("Expected Error got \(result) instead")
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
 }
 extension AlamofireAdapterTests {
     func makeSut(file: StaticString = #file, line: UInt = #line) -> AlamofireAdapter {
@@ -51,7 +72,7 @@ extension AlamofireAdapterTests {
                         with data: Data?,
                         action: @escaping (URLRequest) -> Void) {
         let sut = makeSut()
-        sut.post(to: url, with: data)
+        sut.post(to: url, with: data) { _ in  }
         let exp = expectation(description: "wating")
         URLProtocolStub.observeRequest { request in
             action(request)
@@ -62,6 +83,15 @@ extension AlamofireAdapterTests {
 }
 class URLProtocolStub: URLProtocol {
     static var emit: ((URLRequest) -> Void)?
+    static var data: Data?
+    static var response: HTTPURLResponse?
+    static var error: Error?
+    
+    static func setup(data: Data?, response: HTTPURLResponse?, error: Error?) {
+        self.data = data
+        self.response  = response
+        self.error = error
+    }
     static func observeRequest(completion: @escaping (URLRequest) -> Void) {
         URLProtocolStub.emit = completion
     }
@@ -73,6 +103,16 @@ class URLProtocolStub: URLProtocol {
     }
     override open func startLoading() {
         URLProtocolStub.emit?(request)
+        if let data =  URLProtocolStub.data {
+            client?.urlProtocol(self, didLoad: data)
+        }
+        if let response = URLProtocolStub.response {
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        }
+        if let error = URLProtocolStub.error {
+            client?.urlProtocol(self, didFailWithError: error)
+        }
+        client?.urlProtocolDidFinishLoading(self)
     }
     override open func stopLoading() {}
 }
