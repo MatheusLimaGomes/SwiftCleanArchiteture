@@ -65,6 +65,14 @@ class AlamofireAdapterTests: XCTestCase {
                      when: (data: makeValidData(), response: makeHTTPURLesponse(statusCode: 500), error: nil))
     }
     
+    func test_post_should_complete_with_success_when_request_completes_with_statuscode_300_on_valid_cases() {
+        expectResult(.failure(.noConnectivity),
+                     when: (data: makeValidData(), response: makeHTTPURLesponse(statusCode: 300), error: nil))
+    }
+    func test_post_should_complete_with_success_when_request_completes_with_statuscode_100_on_valid_cases() {
+        expectResult(.failure(.noConnectivity),
+                     when: (data: makeValidData(), response: makeHTTPURLesponse(statusCode: 100), error: nil))
+    }
     func test_post_should_complete_with_error_on_invalid_cases() {
         expectResult(.failure(.noConnectivity),
                      when: (data: makeValidData(), response: makeHTTPURLesponse(statusCode: 200), error: makeError()))
