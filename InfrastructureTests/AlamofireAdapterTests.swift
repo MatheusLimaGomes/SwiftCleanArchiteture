@@ -9,42 +9,8 @@
 import XCTest
 import Alamofire
 import Data
+import Infrastructure
 
-class AlamofireAdapter: HttpPostClient {
-    private let session: Session
-    
-    init(session: Session = .default) {
-        self.session = session
-    }
-    func post(to url: URL, with data: Data?, completion: @escaping (Result<Data?, HttpClientError>)  ->  Void) {
-        session.request(url, method: .post, parameters: data?
-            .toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
-                guard let statuscode = dataResponse
-                    .response?.statusCode  else { return completion(.failure(.noConnectivity)) }
-                switch dataResponse.result {
-                case .failure: completion(.failure(.noConnectivity))
-                case .success(let data):
-                    switch statuscode {
-                    case 204:
-                        completion(.success(nil))
-                    case 200...299:
-                        completion(.success(data))
-                    case 401:
-                        completion(.failure(.unauthorized))
-                    case 403:
-                        completion(.failure(.forbidden))
-                    case 400...499:
-                        completion(.failure(.badRequest))
-                    case 500...599:
-                        completion(.failure(.serverError))
-                    default:
-                        completion(.failure(.noConnectivity))
-                    }
-                    
-                }
-        }
-    }
-}
 class AlamofireAdapterTests: XCTestCase {
     func test_post_should_make_request_with_valid_url_and_method() throws {
         let url = makeURL()
@@ -137,7 +103,9 @@ extension AlamofireAdapterTests {
     }
     
     func expectResult(_ expectedResult: Result<Data?, HttpClientError>,
-                      when stub: (data: Data?, response: HTTPURLResponse?, error: Error?), file: StaticString = #file, line: UInt = #line ) {
+                      when stub: (data: Data?, response: HTTPURLResponse?, error: Error?),
+                      file: StaticString = #file, line: UInt = #line ) {
+        
         let sut = makeSut()
         URLProtocolStub.setup(data: stub.data, response: stub.response, error: stub.error)
         let exp = expectation(description: "wating")
