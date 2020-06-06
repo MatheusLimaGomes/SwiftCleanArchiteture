@@ -18,7 +18,7 @@ class AddAccountIntegrationTests: XCTestCase {
         let url = URL(string: "https://clean-node-api.herokuapp.com/api/signup")!
         let sut = RemoteAddAccount(url: url, httpClient: alamofireAdapter)
         let addAccountModel: AddAccountModel = AddAccountModel(name: "Matheus Francisco", email: "matheus.francisco.gomes@domain.com", password: "secret", passwordConfirmation: "secret")
-        let exp = expectation(description: "wating")
+        let exp = expectation(description: "waiting")
         sut.add(addAccountModel: addAccountModel) { result in
             switch result {
             case .failure: XCTFail("Expected Success, got \(result) isntead")
@@ -29,6 +29,7 @@ class AddAccountIntegrationTests: XCTestCase {
             }
             exp.fulfill()
         }
+
         wait(for: [exp], timeout: 5)
     }
 
