@@ -348,14 +348,14 @@
 		948219C5246D86660002226E = {
 			isa = PBXGroup;
 			children = (
-				94AE557B248B2DB600E4FA4B /* PresentationTests */,
-				94545A642484842900B3EBC1 /* UseCasesIntegrationTests */,
-				94E8B51B247F232000586FA6 /* InfrastructureTests */,
-				94821A41246D8AD80002226E /* DataTests */,
 				948219E0246D87190002226E /* Domain */,
 				94821A36246D8AD80002226E /* Data */,
+				94821A41246D8AD80002226E /* DataTests */,
 				94E8B510247F232000586FA6 /* Infrastructure */,
+				94E8B51B247F232000586FA6 /* InfrastructureTests */,
 				94AE5570248B2DB600E4FA4B /* Presentation */,
+				94AE557B248B2DB600E4FA4B /* PresentationTests */,
+				94545A642484842900B3EBC1 /* UseCasesIntegrationTests */,
 				948219D0246D86660002226E /* Products */,
 				94821A4C246D8B040002226E /* Frameworks */,
 			);
