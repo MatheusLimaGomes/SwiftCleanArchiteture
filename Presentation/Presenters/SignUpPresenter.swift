@@ -10,10 +10,10 @@ import Foundation
 
 
 public struct SignUpViewModel {
-    var name: String?
-    var email: String?
-    var password: String?
-    var passwordConfirmation: String?
+   public var name: String?
+   public var email: String?
+   public var password: String?
+   public var passwordConfirmation: String?
     
     public init(name: String? = nil, email: String? = nil,
                 password: String? = nil, passwordConfirmation: String? = nil) {
@@ -26,9 +26,11 @@ public struct SignUpViewModel {
 
 public final class SignUpPresenter {
     private let alertView: AlertView
+    private let emailValidator: EmailValidator?
     
-    public init(alertView: AlertView) {
+    public init(alertView: AlertView, emailValidator: EmailValidator) {
         self.alertView = alertView
+        self.emailValidator = emailValidator
     }
     public func signUp(_ viewModel: SignUpViewModel) {
         if let message = validateViewModel(viewModel) {
@@ -48,7 +50,7 @@ public final class SignUpPresenter {
         } else if viewModel.password != viewModel.passwordConfirmation {
             return "As senhas não coincidem"
         }
-        
+        _ = emailValidator?.isValid(email: viewModel.email!)
         return nil
     }
 }
