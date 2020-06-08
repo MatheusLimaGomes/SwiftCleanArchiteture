@@ -26,7 +26,7 @@ public struct SignUpViewModel {
 
 public final class SignUpPresenter {
     private let alertView: AlertView
-    private let emailValidator: EmailValidator?
+    private let emailValidator: EmailValidator
     
     public init(alertView: AlertView, emailValidator: EmailValidator) {
         self.alertView = alertView
@@ -49,8 +49,9 @@ public final class SignUpPresenter {
             return "O campo Confirmar Senha é obrigatório"
         } else if viewModel.password != viewModel.passwordConfirmation {
             return "As senhas não coincidem"
+        } else if !emailValidator.isValid(email: viewModel.email!) {
+            return "Email Inválido"
         }
-        _ = emailValidator?.isValid(email: viewModel.email!)
         return nil
     }
 }
