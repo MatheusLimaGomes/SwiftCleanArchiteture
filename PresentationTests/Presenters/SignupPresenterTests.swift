@@ -8,7 +8,7 @@
 
 import XCTest
 import Presentation
-
+import Domain
 
 
 
@@ -18,28 +18,28 @@ class SignupPresenterTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         sut.signUp(makeSignUpViewModel(name: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewIfRequiredField(field: "nome"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewModelIfRequiredField(field: "nome"))
     }
     
     func test_signUp_should_show_error_message_if_email_is_not_provided () throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         sut.signUp(makeSignUpViewModel(email: nil))
-        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewIfRequiredField(field: "email"))
+        XCTAssertEqual(alertViewSpy.viewModel,makeAlertViewModelIfRequiredField(field: "email"))
     }
     
     func test_signUp_should_show_error_message_if_password_is_not_provided () throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         sut.signUp(makeSignUpViewModel(password: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewIfRequiredField(field: "password") )
+        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewModelIfRequiredField(field: "password") )
     }
     
     func test_signUp_should_show_error_message_if_passwordConfirmation_is_not_provided () throws {
         let alertViewSpy = AlertViewSpy()
         let sut = makeSut(alertView: alertViewSpy)
         sut.signUp(makeSignUpViewModel(passwordConfirmation: nil))
-        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewIfRequiredField(field: "Confirmar Senha"))
+        XCTAssertEqual(alertViewSpy.viewModel, makeAlertViewModelIfRequiredField(field: "Confirmar Senha"))
     }
     
     func test_signUp_should_show_error_message_if_passwordConfirmation_not_match () throws {
@@ -67,14 +67,20 @@ class SignupPresenterTests: XCTestCase {
         sut.signUp(signUpViewModel)
         XCTAssertEqual(emailValidatorSpy.email, signUpViewModel.email )
     }
+    func test_signUp_should_call_email_validator_with_correct_values () throws {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(addAccount: addAccountSpy)
+        sut.signUp(makeSignUpViewModel())
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
+    }
 }
 
 extension SignupPresenterTests {
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy()) ->  SignUpPresenter {
-        return SignUpPresenter(alertView: alertView, emailValidator: emailValidator)
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), emailValidator: EmailValidatorSpy = EmailValidatorSpy(), addAccount: AddAccountSpy = AddAccountSpy()) ->  SignUpPresenter {
+        return SignUpPresenter(alertView: alertView, emailValidator: emailValidator, addAccount: addAccount )
     }
-    func makeSignUpViewModel(name: String? = "any name",
-                             email: String? = "any-email@domain.com", password: String? = "secret", passwordConfirmation: String? = "secret" ) -> SignUpViewModel {
+    func makeSignUpViewModel(name: String? = "Nome do usuário completo",
+                             email: String? = "emailusuari@dominio.com", password: String? = "3456178", passwordConfirmation: String? = "3456178") -> SignUpViewModel {
         return SignUpViewModel(name: name, email: email, password: password, passwordConfirmation: passwordConfirmation)
     }
     func makeAlertViewModelIfRequiredField(field: String) -> AlertViewModel {
@@ -100,6 +106,13 @@ extension SignupPresenterTests {
             
             self.viewModel = viewModel
             
+        }
+    }
+
+    class AddAccountSpy: AddAccount{
+        var addAccountModel: AddAccountModel?
+        func add(addAccountModel: AddAccountModel, completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+            self.addAccountModel = addAccountModel
         }
     }
 }
