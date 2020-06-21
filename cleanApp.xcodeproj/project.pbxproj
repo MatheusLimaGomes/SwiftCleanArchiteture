@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		942CF685249EE9920048AA03 /* Extensions+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8B501247F19C100586FA6 /* Extensions+TestHelper.swift */; };
+		942CF687249EED580048AA03 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942CF686249EED580048AA03 /* LoadingView.swift */; };
 		942F42BB2476105F003FD0B1 /* RemoteAddAccountTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */; };
 		9447D584248BF31400A054D2 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447D583248BF31400A054D2 /* SignUpPresenter.swift */; };
 		9447D585248BF35800A054D2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948219DF246D87190002226E /* Domain.framework */; };
@@ -150,6 +151,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		942CF686249EED580048AA03 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		942F42BA2476105F003FD0B1 /* RemoteAddAccountTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountTest.swift; sourceTree = "<group>"; };
 		9447D583248BF31400A054D2 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		9447D592248BF49A00A054D2 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				9447D592248BF49A00A054D2 /* AlertView.swift */,
+				942CF686249EED580048AA03 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9447D59A248E18BF00A054D2 /* EmailValidators.swift in Sources */,
+				942CF687249EED580048AA03 /* LoadingView.swift in Sources */,
 				9447D584248BF31400A054D2 /* SignUpPresenter.swift in Sources */,
 				9447D593248BF49A00A054D2 /* AlertView.swift in Sources */,
 			);
