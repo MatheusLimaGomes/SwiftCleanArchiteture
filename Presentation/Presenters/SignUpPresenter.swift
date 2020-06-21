@@ -11,10 +11,10 @@ import Domain
 
 
 public struct SignUpViewModel {
-   public var name: String?
-   public var email: String?
-   public var password: String?
-   public var passwordConfirmation: String?
+    public var name: String?
+    public var email: String?
+    public var password: String?
+    public var passwordConfirmation: String?
     
     public init(name: String? = nil, email: String? = nil,
                 password: String? = nil, passwordConfirmation: String? = nil) {
@@ -43,11 +43,10 @@ public final class SignUpPresenter {
                                                   email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)
             addAccount.add(addAccountModel: addAccountModel) { result in
                 switch result {
-                    
-                case .success: break
                 case .failure:
                     self.alertView
                         .showMessage(viewModel: AlertViewModel(title: "Erro!", message: "Algo inesperado aconteceu, tente novamente em alguns instantes"))
+                case .success: break
                 }
             }
         }
@@ -65,7 +64,7 @@ public final class SignUpPresenter {
         } else if viewModel.password != viewModel.passwordConfirmation {
             return "As senhas não coincidem"
         } else if !emailValidator.isValid(email: viewModel.email!) {
-            return "Email Inválido"
+            return "O campo Email é Inválido"
         }
         return nil
     }

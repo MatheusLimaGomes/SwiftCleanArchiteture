@@ -10,9 +10,9 @@ import Foundation
 import Domain
 
 func makeAccountModel() -> AccountModel {
-    return AccountModel(id: "any_id", name: "Nome do usuário completo", email: "emailusuari@dominio.com", password: "3456178")
+    return AccountModel(id: "any_id", name: "Nome do usuário completo", email: "emailusuari@dominio.com", password: "secret")
 }
 
 func makeAddAccountModel() -> AddAccountModel {
-    return AddAccountModel(name: "Nome do usuário completo", email: "emailusuari@dominio.com", password: "3456178", passwordConfirmation: "3456178")
+    return AddAccountModel(name: "Nome do usuário completo", email: "emailusuari@dominio.com", password: "secret", passwordConfirmation: "secret")
 }
