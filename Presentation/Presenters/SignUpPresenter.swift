@@ -41,7 +41,8 @@ public final class SignUpPresenter {
         } else {
             let addAccountModel = AddAccountModel(name: viewModel.name!,
                                                   email: viewModel.email!, password: viewModel.password!, passwordConfirmation: viewModel.passwordConfirmation!)
-            addAccount.add(addAccountModel: addAccountModel) { result in
+            addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .failure:
                     self.alertView
