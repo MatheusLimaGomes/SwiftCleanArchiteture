@@ -116,13 +116,28 @@ class SignupPresenterTests: XCTestCase {
         alertViewSpy.observe { [weak self] (viewModel) in
             XCTAssertEqual(viewModel,
                            self?.makeErrorAlertViewModel(title: "Erro!",
-                                                         message: "Algo inesperado aconteceu, tente novamente em alguns instantes"))
+                                                         message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
             exp.fulfill()
         }
         sut.signUp(makeSignUpViewModel())
         addAccountSpy.completesWithError(.unexpected)
         wait(for: [exp], timeout: 1)
     }
+    
+    func test_signUp_should_show_error_message_if_addAccount_succeeds() throws {
+        let alertViewSpy = AlertViewSpy()
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(alertView: alertViewSpy, addAccount: addAccountSpy)
+        let exp = expectation(description: "wating")
+        alertViewSpy.observe { [weak self] (viewModel) in
+            XCTAssertEqual(viewModel, self?.makeSuccessAlertViewModel(message: "Conta Criada Com Sucesso."))
+            exp.fulfill()
+        }
+        sut.signUp(makeSignUpViewModel())
+        addAccountSpy.completesWithAccount(makeAccountModel())
+        wait(for: [exp], timeout: 1)
+    }
+    
     func test_signUp_should_show_loading_before_and_after_call_of_addAccount () throws {
         let loadingViewSpy = LoadingViewSpy()
         let addAccountSpy = AddAccountSpy()
@@ -161,6 +176,11 @@ extension SignupPresenterTests {
     func makeErrorAlertViewModel(title: String, message: String) -> AlertViewModel {
         return AlertViewModel(title: title, message: message)
     }
+    
+    func makeSuccessAlertViewModel(message: String) -> AlertViewModel {
+           return AlertViewModel(title: "Sucesso", message: message)
+    }
+    
     func makeInvalidAlertViewModel(field: String) -> AlertViewModel {
         return AlertViewModel(title: "Falha na validação", message: "O campo \(field) é Inválido")
     }
@@ -198,6 +218,9 @@ extension SignupPresenterTests {
         }
         func completesWithError(_ error: DomainError) {
             completion?(.failure(error))
+        }
+        func completesWithAccount(_ account: AccountModel) {
+            self.completion?(.success(account))
         }
     }
     class  LoadingViewSpy: LoadingView {
