@@ -396,6 +396,39 @@
 			path = UseCasesIntegrationTests;
 			sourceTree = "<group>";
 		};
+		945FFAB124A7915800A95A95 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94CE963324A6D58500E4109D /* SignUpViewController.swift */,
+				94CE963524A6D61500E4109D /* SignUp.storyboard */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		945FFAB324A7917E00A95A95 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				94CE962424A6CE9C00E4109D /* SignUpViewControllerTests.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		945FFAB524A791CE00A95A95 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				945FFAB324A7917E00A95A95 /* SignUp */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		945FFAB624A791E200A95A95 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				945FFAB124A7915800A95A95 /* SignUp */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		9460488A2479C4B30075EFE3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,9 +613,8 @@
 		94CE961824A6CE9C00E4109D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				945FFAB624A791E200A95A95 /* Scenes */,
 				94CE961A24A6CE9C00E4109D /* Info.plist */,
-				94CE963324A6D58500E4109D /* SignUpViewController.swift */,
-				94CE963524A6D61500E4109D /* SignUp.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -590,7 +622,7 @@
 		94CE962324A6CE9C00E4109D /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				94CE962424A6CE9C00E4109D /* SignUpViewControllerTests.swift */,
+				945FFAB524A791CE00A95A95 /* Scenes */,
 				94CE962624A6CE9C00E4109D /* Info.plist */,
 			);
 			path = UITests;
