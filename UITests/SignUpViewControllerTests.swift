@@ -19,7 +19,12 @@ class SignUpViewControllerTests: XCTestCase {
     }
     func test_sut_implements_Loading_view_protocol() throws {
         let sut = makeSut()
-        XCTAssertNotNil(sut as LoadingView) 
+        XCTAssertNotNil(sut as LoadingView)
+    }
+    
+    func test_sut_implements_Alert_view_protocol() throws {
+        let sut = makeSut()
+        XCTAssertNotNil(sut as AlertView)
     }
 }
 extension SignUpViewControllerTests {
