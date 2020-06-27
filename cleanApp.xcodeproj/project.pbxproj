@@ -30,6 +30,7 @@
 		94545A662484842900B3EBC1 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */; };
 		94545A682484842900B3EBC1 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94821A35246D8AD80002226E /* Data.framework */; };
 		94545A722484851E00B3EBC1 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */; };
+		945FFAB924A7924E00A95A95 /* Tests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FFAB824A7924E00A95A95 /* Tests+Extensions.swift */; };
 		946048832479C1AA0075EFE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048822479C1AA0075EFE3 /* Model.swift */; };
 		946048852479C3290075EFE3 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048842479C3290075EFE3 /* RemoteAddAccount.swift */; };
 		946048892479C4040075EFE3 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048882479C4040075EFE3 /* HttpPostClient.swift */; };
@@ -209,6 +210,7 @@
 		94545A632484842900B3EBC1 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountIntegrationTests.swift; sourceTree = "<group>"; };
 		94545A672484842900B3EBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945FFAB824A7924E00A95A95 /* Tests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tests+Extensions.swift"; sourceTree = "<group>"; };
 		946048822479C1AA0075EFE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		946048842479C3290075EFE3 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		946048882479C4040075EFE3 /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
@@ -429,6 +431,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		945FFAB724A7922100A95A95 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				945FFAB824A7924E00A95A95 /* Tests+Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		9460488A2479C4B30075EFE3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +632,7 @@
 		94CE962324A6CE9C00E4109D /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				945FFAB724A7922100A95A95 /* Helpers */,
 				945FFAB524A791CE00A95A95 /* Scenes */,
 				94CE962624A6CE9C00E4109D /* Info.plist */,
 			);
@@ -1216,6 +1227,7 @@
 			files = (
 				94CE963724A6D6EC00E4109D /* SignUpViewController.swift in Sources */,
 				94CE962524A6CE9C00E4109D /* SignUpViewControllerTests.swift in Sources */,
+				945FFAB924A7924E00A95A95 /* Tests+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
