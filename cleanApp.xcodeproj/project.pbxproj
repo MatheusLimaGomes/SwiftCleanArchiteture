@@ -26,6 +26,7 @@
 		9447D593248BF49A00A054D2 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447D592248BF49A00A054D2 /* AlertView.swift */; };
 		9447D59A248E18BF00A054D2 /* EmailValidators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447D599248E18BF00A054D2 /* EmailValidators.swift */; };
 		9447D5A22495480300A054D2 /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8B507247F1B0100586FA6 /* AccountModelFactory.swift */; };
+		9450185824A6ECF8009DE1BA /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94CE963524A6D61500E4109D /* SignUp.storyboard */; };
 		94545A662484842900B3EBC1 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */; };
 		94545A682484842900B3EBC1 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94821A35246D8AD80002226E /* Data.framework */; };
 		94545A722484851E00B3EBC1 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */; };
@@ -1071,6 +1072,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9450185824A6ECF8009DE1BA /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

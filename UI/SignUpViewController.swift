@@ -10,8 +10,9 @@ import UIKit
 
 public final class SignUpViewController: UIViewController {
 
-    let loadingIndicator: UIActivityIndicatorView? = nil
-
+    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView?
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
 
