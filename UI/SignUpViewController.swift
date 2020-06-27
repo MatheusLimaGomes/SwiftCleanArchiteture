@@ -13,7 +13,12 @@ public final class SignUpViewController: UIViewController {
 
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var nameTextField: UITextField?
+    @IBOutlet weak var emailTextField: UITextField?
+    @IBOutlet weak var passwordTextField: UITextField?
+    @IBOutlet weak var passwordConfirmationTextField: UITextField?
     @IBOutlet weak var saveButton: UIButton?
+    
     var signUp: ((SignUpViewModel) -> Void)?
     
     public override func viewDidLoad() {
@@ -27,7 +32,11 @@ public final class SignUpViewController: UIViewController {
     
     @objc
     private func saveButtonTapped() {
-        signUp?(SignUpViewModel(name: nil, email: nil, password: nil, passwordConfirmation: nil ))
+        let viewModel = SignUpViewModel(name: nameTextField?.text,
+        email: emailTextField?.text,
+        password: passwordTextField?.text,
+        passwordConfirmation: passwordConfirmationTextField?.text)
+        signUp?(viewModel )
     }
 
 }
