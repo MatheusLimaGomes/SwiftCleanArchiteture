@@ -13,10 +13,21 @@ public final class SignUpViewController: UIViewController {
 
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var saveButton: UIButton?
+    var signUp: ((SignUpViewModel) -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        setup()
+    }
+    private func setup() {
+        saveButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside )
+    }
+    
+    
+    @objc
+    private func saveButtonTapped() {
+        signUp?(SignUpViewModel(name: nil, email: nil, password: nil, passwordConfirmation: nil ))
     }
 
 }

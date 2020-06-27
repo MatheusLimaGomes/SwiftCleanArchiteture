@@ -22,21 +22,29 @@
                                     <constraint firstAttribute="width" constant="120" id="fNK-sl-imj"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45u-b0-ydP">
+                                <rect key="frame" x="184" y="682" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="45u-b0-ydP" firstAttribute="leading" secondItem="hmg-i6-pcG" secondAttribute="leading" constant="184" id="Nq6-yv-dDK"/>
+                            <constraint firstItem="hmg-i6-pcG" firstAttribute="trailing" secondItem="45u-b0-ydP" secondAttribute="trailing" constant="184" id="a1o-qT-6UU"/>
                             <constraint firstItem="osC-iV-UzR" firstAttribute="centerY" secondItem="5ie-Si-7Ha" secondAttribute="centerY" id="bAA-k3-oYg"/>
+                            <constraint firstItem="hmg-i6-pcG" firstAttribute="bottom" secondItem="45u-b0-ydP" secondAttribute="bottom" constant="150" id="bWX-8K-yxO"/>
                             <constraint firstItem="osC-iV-UzR" firstAttribute="centerX" secondItem="5ie-Si-7Ha" secondAttribute="centerX" id="gfK-ze-M0K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hmg-i6-pcG"/>
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="osC-iV-UzR" id="mN1-d7-WOf"/>
+                        <outlet property="saveButton" destination="45u-b0-ydP" id="DDh-RL-DkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pj-yN-JpF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="52"/>
+            <point key="canvasLocation" x="-381.15942028985512" y="51.5625"/>
         </scene>
     </scenes>
 </document>
