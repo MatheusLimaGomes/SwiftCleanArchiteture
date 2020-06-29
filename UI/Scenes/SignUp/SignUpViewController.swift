@@ -28,9 +28,8 @@ public final class SignUpViewController: UIViewController {
     private func setup() {
         saveButton?.makeRounded(cornerRadius: 10)
         saveButton?.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside )
+        hideKeyboardOnTap()
     }
-    
-    
     @objc
     private func saveButtonTapped() {
         let viewModel = SignUpViewModel(name: nameTextField?.text,
@@ -57,12 +56,5 @@ extension SignUpViewController: AlertView {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true)
-    }
-}
-extension UIButton {
-    func makeRounded(cornerRadius: CGFloat) {
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = cornerRadius
     }
 }
