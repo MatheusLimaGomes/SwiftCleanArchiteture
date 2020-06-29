@@ -32,6 +32,8 @@
 		94545A722484851E00B3EBC1 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94545A652484842900B3EBC1 /* AddAccountIntegrationTests.swift */; };
 		945FB42D24A8BE0A007878C1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FB42C24A8BE0A007878C1 /* UIViewController+Extensions.swift */; };
 		945FB42F24A8BF0B007878C1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FB42E24A8BF0B007878C1 /* UIView+Extensions.swift */; };
+		945FB43124A98069007878C1 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FB43024A98069007878C1 /* Storyboarded.swift */; };
+		945FB43224A986DF007878C1 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FB43024A98069007878C1 /* Storyboarded.swift */; };
 		945FFAB924A7924E00A95A95 /* Tests+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945FFAB824A7924E00A95A95 /* Tests+Extensions.swift */; };
 		946048832479C1AA0075EFE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048822479C1AA0075EFE3 /* Model.swift */; };
 		946048852479C3290075EFE3 /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048842479C3290075EFE3 /* RemoteAddAccount.swift */; };
@@ -214,6 +216,7 @@
 		94545A672484842900B3EBC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945FB42C24A8BE0A007878C1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		945FB42E24A8BF0B007878C1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		945FB43024A98069007878C1 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		945FFAB824A7924E00A95A95 /* Tests+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tests+Extensions.swift"; sourceTree = "<group>"; };
 		946048822479C1AA0075EFE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		946048842479C3290075EFE3 /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
@@ -407,6 +410,7 @@
 			children = (
 				945FB42C24A8BE0A007878C1 /* UIViewController+Extensions.swift */,
 				945FB42E24A8BF0B007878C1 /* UIView+Extensions.swift */,
+				945FB43024A98069007878C1 /* Storyboarded.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1233,6 +1237,7 @@
 			files = (
 				945FB42F24A8BF0B007878C1 /* UIView+Extensions.swift in Sources */,
 				945FB42D24A8BE0A007878C1 /* UIViewController+Extensions.swift in Sources */,
+				945FB43124A98069007878C1 /* Storyboarded.swift in Sources */,
 				94CE963424A6D58500E4109D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1244,6 +1249,7 @@
 				94CE963724A6D6EC00E4109D /* SignUpViewController.swift in Sources */,
 				94CE962524A6CE9C00E4109D /* SignUpViewControllerTests.swift in Sources */,
 				945FFAB924A7924E00A95A95 /* Tests+Extensions.swift in Sources */,
+				945FB43224A986DF007878C1 /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
