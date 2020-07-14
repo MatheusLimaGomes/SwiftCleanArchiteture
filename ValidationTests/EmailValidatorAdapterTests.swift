@@ -12,22 +12,27 @@ import Presentation
 class EmailValidatorAdapterTests: XCTestCase {
     
     func test_invalidEmails() throws {
-        let sut = EmailValidatorAdapter()
+        let sut = makeSut()
         XCTAssertFalse(sut.isValid(email: "rr"))
         XCTAssertFalse(sut.isValid(email: "rr@"))
         XCTAssertFalse(sut.isValid(email: "rr@."))
         XCTAssertFalse(sut.isValid(email: "rr@@"))
         XCTAssertFalse(sut.isValid(email: "@rr.2"))
         XCTAssertFalse(sut.isValid(email: "123"))
-        XCTAssertFalse(sut.isValid(email: "r@r.2")) 
+        XCTAssertFalse(sut.isValid(email: "r@r.2"))
         XCTAssertFalse(sut.isValid(email: "rr@w.c"))
         XCTAssertFalse(sut.isValid(email: "rr@domain.c"))
     }
     func test_validEmails() throws {
-        let sut = EmailValidatorAdapter()
-        XCTAssertTrue(sut.isValid(email: "first@domain.com"))
+        XCTAssertTrue(makeSut().isValid(email: "first@domain.com"))
+        XCTAssertTrue(makeSut().isValid(email: "first@domain.com.br"))
+        XCTAssertTrue(makeSut().isValid(email: "first@domain.com.br.an"))
     }
-    
+}
+extension EmailValidatorAdapterTests {
+    func makeSut() -> EmailValidatorAdapter {
+        return EmailValidatorAdapter()
+    }
 }
 
 public final class EmailValidatorAdapter: EmailValidator {
@@ -38,6 +43,4 @@ public final class EmailValidatorAdapter: EmailValidator {
         let regex = try! NSRegularExpression(pattern: pattern)
         return regex.firstMatch(in: email, options: [], range: range) != nil
     }
-    
-    
 }
