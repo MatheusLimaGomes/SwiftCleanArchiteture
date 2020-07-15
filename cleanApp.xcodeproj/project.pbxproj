@@ -73,6 +73,7 @@
 		9483824424BF9C9C00C1307D /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824324BF9C9C00C1307D /* SignUpIntegrationTests.swift */; };
 		9483824524BF9D1300C1307D /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE960A24A6C90600E4109D /* AddAccountSpy.swift */; };
 		9483824624BF9E0900C1307D /* Extensions+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8B501247F19C100586FA6 /* Extensions+TestHelper.swift */; };
+		9483824924BFA2EA00C1307D /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824824BFA2EA00C1307D /* WeakVarProxy.swift */; };
 		94AE5578248B2DB600E4FA4B /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94AE556F248B2DB600E4FA4B /* Presentation.framework */; };
 		94AE557D248B2DB600E4FA4B /* SignupPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AE557C248B2DB600E4FA4B /* SignupPresenterTests.swift */; };
 		94CE960B24A6C90600E4109D /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE960A24A6C90600E4109D /* AddAccountSpy.swift */; };
@@ -367,6 +368,7 @@
 		9483823E24BF97B300C1307D /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		9483824124BF985300C1307D /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
 		9483824324BF9C9C00C1307D /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
+		9483824824BFA2EA00C1307D /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		94AE556F248B2DB600E4FA4B /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94AE5572248B2DB600E4FA4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94AE5577248B2DB600E4FA4B /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -598,6 +600,7 @@
 		945CA41224BD3D7A00B73B9C /* main */ = {
 			isa = PBXGroup;
 			children = (
+				9483824724BFA2CC00C1307D /* Proxies */,
 				9483824024BF984400C1307D /* Composers */,
 				945CA44C24BD3FA400B73B9C /* Factories */,
 				945CA41324BD3D7A00B73B9C /* AppDelegate.swift */,
@@ -825,6 +828,14 @@
 				9483824124BF985300C1307D /* SignUpComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		9483824724BFA2CC00C1307D /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				9483824824BFA2EA00C1307D /* WeakVarProxy.swift */,
+			);
+			path = Proxies;
 			sourceTree = "<group>";
 		};
 		94AE5570248B2DB600E4FA4B /* Presentation */ = {
@@ -1561,6 +1572,7 @@
 				945CA44E24BD3FC000B73B9C /* ControllerFactory.swift in Sources */,
 				945CA41424BD3D7A00B73B9C /* AppDelegate.swift in Sources */,
 				945CA41624BD3D7A00B73B9C /* SceneDelegate.swift in Sources */,
+				9483824924BFA2EA00C1307D /* WeakVarProxy.swift in Sources */,
 				9483824224BF985300C1307D /* SignUpComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
