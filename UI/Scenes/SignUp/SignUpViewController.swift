@@ -19,7 +19,7 @@ public final class SignUpViewController: UIViewController, Storyboarded {
     @IBOutlet weak var passwordConfirmationTextField: UITextField?
     @IBOutlet weak var saveButton: UIButton?
     
-    var signUp: ((SignUpViewModel) -> Void)?
+    public var signUp: ((SignUpViewModel) -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
