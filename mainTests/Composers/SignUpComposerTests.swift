@@ -8,10 +8,19 @@
 
 import XCTest
 import main
+import UI
 
 class SignUpComposerTests: XCTestCase {
-    func test_ui_presentation_integration() throws {
-        let sut = SignUpComposer.composeControllerWith(AddAccountSpy())
-        checkMemoryLeak(for: sut)
+    func test_background_should_complete_on_main_thread() throws {
+        let (sut, _) = makeSut()
+        sut.loadViewIfNeeded()
+    }
+}
+extension SignUpComposerTests {
+    func makeSut(addAccount: AddAccountSpy = AddAccountSpy(),  file: StaticString = #file, line: UInt = #line) -> (sut: SignUpViewController, addAccount: AddAccountSpy) {
+        let sut = SignUpComposer.composeControllerWith(addAccount)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: addAccount, file: file, line: line)
+        return (sut, addAccount)
     }
 }
