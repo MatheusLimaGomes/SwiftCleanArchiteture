@@ -69,7 +69,7 @@
 		94821A4E246D8B040002226E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 948219DF246D87190002226E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9483823F24BF97B300C1307D /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483823E24BF97B300C1307D /* UseCaseFactory.swift */; };
 		9483824224BF985300C1307D /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824124BF985300C1307D /* SignUpComposer.swift */; };
-		9483824424BF9C9C00C1307D /* SignUpIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824324BF9C9C00C1307D /* SignUpIntegrationTests.swift */; };
+		9483824424BF9C9C00C1307D /* SignUpComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824324BF9C9C00C1307D /* SignUpComposerTests.swift */; };
 		9483824524BF9D1300C1307D /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE960A24A6C90600E4109D /* AddAccountSpy.swift */; };
 		9483824624BF9E0900C1307D /* Extensions+TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E8B501247F19C100586FA6 /* Extensions+TestHelper.swift */; };
 		9483824924BFA2EA00C1307D /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9483824824BFA2EA00C1307D /* WeakVarProxy.swift */; };
@@ -366,7 +366,7 @@
 		94821A44246D8AD80002226E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9483823E24BF97B300C1307D /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		9483824124BF985300C1307D /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
-		9483824324BF9C9C00C1307D /* SignUpIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIntegrationTests.swift; sourceTree = "<group>"; };
+		9483824324BF9C9C00C1307D /* SignUpComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposerTests.swift; sourceTree = "<group>"; };
 		9483824824BFA2EA00C1307D /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		9483824B24BFF64200C1307D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		9483824C24BFF76C00C1307D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -618,7 +618,7 @@
 		945CA42924BD3D8400B73B9C /* mainTests */ = {
 			isa = PBXGroup;
 			children = (
-				9483824324BF9C9C00C1307D /* SignUpIntegrationTests.swift */,
+				94F4F1A824C133F0005DE341 /* Composers */,
 				945CA42C24BD3D8400B73B9C /* Info.plist */,
 			);
 			path = mainTests;
@@ -1025,6 +1025,14 @@
 				94E8B539248143C100586FA6 /* URLProtocolStub.swift */,
 			);
 			path = Http;
+			sourceTree = "<group>";
+		};
+		94F4F1A824C133F0005DE341 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				9483824324BF9C9C00C1307D /* SignUpComposerTests.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1594,7 +1602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9483824524BF9D1300C1307D /* AddAccountSpy.swift in Sources */,
-				9483824424BF9C9C00C1307D /* SignUpIntegrationTests.swift in Sources */,
+				9483824424BF9C9C00C1307D /* SignUpComposerTests.swift in Sources */,
 				9483824624BF9E0900C1307D /* Extensions+TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
