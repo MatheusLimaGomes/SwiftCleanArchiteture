@@ -11,14 +11,22 @@ import main
 import UI
 
 class SignUpComposerTests: XCTestCase {
-    func test_background_should_complete_on_main_thread() throws {
-        let (sut, _) = makeSut()
+    func test_background_request_should_complete_on_main_thread() throws {
+        let (sut, addAccountSpy) = makeSut()
         sut.loadViewIfNeeded()
+        sut.signUp?(makeSignUpViewModel())
+        let exp = expectation(description: "wating")
+        DispatchQueue.global().async {
+            addAccountSpy.completesWithError(.unexpected)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
     }
 }
 extension SignUpComposerTests {
-    func makeSut(addAccount: AddAccountSpy = AddAccountSpy(),  file: StaticString = #file, line: UInt = #line) -> (sut: SignUpViewController, addAccount: AddAccountSpy) {
-        let sut = SignUpComposer.composeControllerWith(addAccount)
+    func makeSut(file: StaticString = #file, line: UInt = #line) -> (sut: SignUpViewController, addAccount: AddAccountSpy) {
+        let addAccount = AddAccountSpy()
+        let sut = SignUpComposer.composeControllerWith(DispatchMainQueueDecorator(addAccount))
         checkMemoryLeak(for: sut, file: file, line: line)
         checkMemoryLeak(for: addAccount, file: file, line: line)
         return (sut, addAccount)

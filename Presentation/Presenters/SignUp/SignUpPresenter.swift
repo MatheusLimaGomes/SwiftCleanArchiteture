@@ -29,6 +29,7 @@ public final class SignUpPresenter {
             loadingView.display(viewModel: LoadingViewModel(isActive: true))
             addAccount.add(addAccountModel: SignUpMapper.toAddAccountModel(viewModel)) { [weak self] result in
                 guard let self = self else { return }
+                self.loadingView.display(viewModel: LoadingViewModel(isActive: false))
                 switch result {
                 case .failure:
                     self.alertView
@@ -38,7 +39,6 @@ public final class SignUpPresenter {
                     self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso",
                                                                          message: "Conta Criada Com Sucesso."))
                 }
-                self.loadingView.display(viewModel: LoadingViewModel(isActive: false))
             }
         }
     }

@@ -62,6 +62,7 @@
 		946048892479C4040075EFE3 /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048882479C4040075EFE3 /* HttpPostClient.swift */; };
 		946048962479CBF00075EFE3 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048952479CBF00075EFE3 /* DomainError.swift */; };
 		946048992479CFD20075EFE3 /* HttpErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946048982479CFD20075EFE3 /* HttpErrors.swift */; };
+		947B648F24C2101800BD9A2F /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94CE961024A6CA9100E4109D /* TestFactories.swift */; };
 		948219E8246D87B90002226E /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E7246D87B90002226E /* AddAccount.swift */; };
 		948219EA246D89450002226E /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948219E9246D89450002226E /* AccountModel.swift */; };
 		94821A3E246D8AD80002226E /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94821A35246D8AD80002226E /* Data.framework */; };
@@ -1603,6 +1604,7 @@
 			files = (
 				9483824524BF9D1300C1307D /* AddAccountSpy.swift in Sources */,
 				9483824424BF9C9C00C1307D /* SignUpComposerTests.swift in Sources */,
+				947B648F24C2101800BD9A2F /* TestFactories.swift in Sources */,
 				9483824624BF9E0900C1307D /* Extensions+TestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

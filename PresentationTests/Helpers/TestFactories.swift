@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Presentation
 
 func makeSignUpViewModel(name: String? = "Nome do usuário completo",
                          email: String? = "emailusuari@dominio.com", password: String? = "secret", passwordConfirmation: String? = "secret") -> SignUpViewModel {
