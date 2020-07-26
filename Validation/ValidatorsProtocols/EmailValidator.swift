@@ -1,5 +1,5 @@
 //
-//  EmailValidators.swift
+//  EmailValidator.swift
 //  Presentation
 //
 //  Created by Matheus Lima Gomes on 08/06/20.
