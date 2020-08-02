@@ -13,19 +13,19 @@ import Validation
 
 class EmailValidationTests: XCTestCase {
     func test_validate_should_return_error_if_invalid_email_is_provided() throws {
-        let emailValidator = EmailValidatorSpy()
+        let emailValidatorSpy = EmailValidatorSpy()
         let sut = makeSut(fieldName: "email",
-                          emailValidator: EmailValidatorSpy(),
+                          emailValidator: emailValidatorSpy,
                           fieldLabel: "Email")
-        emailValidator.simulateInvalidEmail()
+        emailValidatorSpy.simulateInvalidEmail()
         let errorMessage = sut.validate(data: ["email":"invalid_email@domain.com"])
         XCTAssertEqual(errorMessage, "O campo Email é invalido")
     }
     func test_validate_should_return_error_if_correct_fieldLabel() throws {
-        let emailValidator = EmailValidatorSpy()
-        let sut = makeSut(fieldName: "email", emailValidator: EmailValidatorSpy(),
+        let emailValidatorSpy = EmailValidatorSpy()
+        let sut = makeSut(fieldName: "email", emailValidator: emailValidatorSpy,
                           fieldLabel: "Email2")
-        emailValidator.simulateInvalidEmail()
+        emailValidatorSpy.simulateInvalidEmail()
         let errorMessage = sut.validate(data: ["email":"invalid_email@domain.com"])
         XCTAssertEqual(errorMessage, "O campo Email2 é invalido")
     }

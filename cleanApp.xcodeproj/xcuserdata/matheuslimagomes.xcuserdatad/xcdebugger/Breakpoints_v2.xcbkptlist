@@ -3,4 +3,54 @@
    uuid = "D7DE671C-739F-4D12-B68F-9AC54BB26E01"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76B91D61-8407-47EA-8349-1168389316C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Validation/Validators/EmailValidation.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "validate(data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "76B91D61-8407-47EA-8349-1168389316C7 - 5f16fdc05212c161"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Validation.EmailValidation.validate(data: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Validation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matheuslimagomes/Documents/Developer/Matheus-iOSProjects/cleanApp/Validation/Validators/EmailValidation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "724">
+               </Location>
+               <Location
+                  uuid = "76B91D61-8407-47EA-8349-1168389316C7 - 5f16fdc05212c161"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Validation.EmailValidation.validate(data: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Validation"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/matheuslimagomes/Documents/Developer/Matheus-iOSProjects/cleanApp/Validation/Validators/EmailValidation.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "1101">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
